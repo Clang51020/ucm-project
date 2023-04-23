@@ -6,3 +6,15 @@ body {
 .App {
   text-align: center;
 }
+
+.API-response {
+  display: flex;
+  padding: 0px 10px;
+  background-color: aqua;
+  margin: 10px 0px;
+}
+
+.heading {
+  background-color: red;
+  margin: 0px 10px;
+}
