@@ -1,15 +1,15 @@
 import { React, useContext } from 'react';
-import { context } from './context/testContext';
+import { authContext } from './context/firebaseAuth';
 import ComponentTwo from './ComponentTwo';
 import ComponentThree from './ComponentThree';
 
 function Component() {
-    const [user, handleSignIn] = useContext(context);
-
+  const user = useContext(authContext);
   return (
-    <>
-        {user.signedIn ? <ComponentThree /> : <ComponentTwo />}
-    </>
+    <div>
+      <h1>Testing H1</h1>
+      <h2>{user?.uid}</h2>
+    </div>
   )
 }
 
