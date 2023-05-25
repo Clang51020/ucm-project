@@ -3,24 +3,22 @@ import { useContext, useState } from 'react';
 import { context } from './context/testContext';
 
 function App() {
-  const { usersList, setUsersList } = useContext(context);
-  const [input, setInput] = useState('');
+  const { usersList, getData } = useContext(context);
 
-  const addUser = (e) => {
-    console.log(e.target.value)
-  }
+  console.log(usersList);
+
+  usersList.forEach((user) => {
+    console.log(user.id)
+  })
 
   return (
     <div>
       {usersList.map((user) => (
-        <div>
-          <h1 key={user.email}>{user.email}</h1>
-          <h2>{user.mainOffice}</h2>
-          <p>{user.role}</p>
+        <div key={user.id}>
+          <h1>{user.data.Email}</h1>
         </div>
       ))}
-      <input type='text' onChange={addUser}></input>
-      <button onClick={setUsersList}>Add User</button>
+      <button onClick={getData}>Get User Data</button>
     </div>
   );
 }
