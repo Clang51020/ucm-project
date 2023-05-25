@@ -1,11 +1,9 @@
 import './App.css';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { context } from './context/testContext';
 
 function App() {
   const { usersList, getData } = useContext(context);
-
-  console.log(usersList);
 
   usersList.forEach((user) => {
     console.log(user.id)
